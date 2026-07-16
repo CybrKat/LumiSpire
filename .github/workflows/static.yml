@@ -1,7 +1,10 @@
-# Deploy static content (landing page + Solid-OIDC client files) to GitHub Pages.
-# Serves index.html, client-profile.jsonld and redirect.html from the repo root
-# at https://<user>.github.io/LumiSpire/ so Solid login can resolve the clientId.
-name: Deploy static content to Pages
+# Build the Flutter web app and deploy the PLAYABLE app to GitHub Pages.
+#
+# The built app is served at https://<user>.github.io/LumiSpire/. The Solid-OIDC
+# client document and the redirect helper are copied alongside it so login
+# works (the app's clientId resolves), and the kid-friendly landing page is kept
+# at /LumiSpire/landing.html.
+name: Build & deploy Flutter web app to Pages
 
 on:
   push:
@@ -18,7 +21,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  deploy:
+  build-deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -26,12 +29,33 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Build web (base href matches the Pages sub-path)
+        run: flutter build web --release --base-href "/LumiSpire/"
+
+      - name: Add Solid-OIDC client file and keep the landing page
+        run: |
+          cp client-profile.jsonld build/web/client-profile.jsonld
+          cp index.html build/web/landing.html
+          # redirect.html is already copied from web/ by `flutter build web`.
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: build/web
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
