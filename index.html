@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LumiSpire — explore, learn, level up</title>
+    <meta
+      name="description"
+      content="LumiSpire is a world-exploring learning game. Clear levels to earn XP and coins, unlock worlds and avatar gear — and all your progress stays encrypted on your own Solid Pod."
+    />
+    <style>
+      :root {
+        --indigo: #4361ee;
+        --indigo-deep: #2f47b8;
+        --teal: #2ec4b6;
+        --amber: #f4a259;
+        --ink: #16203a;
+        --muted: #5a6480;
+        --pale: #eef1fe;
+        --card: #ffffff;
+        --radius: 22px;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background: linear-gradient(180deg, var(--pale) 0%, #ffffff 55%);
+        line-height: 1.6;
+      }
+      .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+      header {
+        text-align: center;
+        padding: 72px 20px 44px;
+        background: radial-gradient(120% 120% at 50% 0%, #e2e8ff 0%, transparent 70%);
+      }
+      .logo {
+        width: 88px; height: 88px; border-radius: 26px;
+        background: linear-gradient(135deg, var(--teal), var(--indigo));
+        display: grid; place-items: center; margin: 0 auto 20px;
+        box-shadow: 0 12px 34px rgba(47,71,184,0.32); font-size: 44px;
+      }
+      h1 { font-size: 2.6rem; margin: 0 0 6px; letter-spacing: -0.5px; }
+      .tagline { font-size: 1.25rem; color: var(--indigo-deep); font-weight: 700; margin: 0; }
+      .sub { color: var(--muted); max-width: 640px; margin: 14px auto 0; }
+      h2 { font-size: 1.6rem; margin: 46px 0 4px; display: flex; align-items: center; gap: 10px; }
+      h2 .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--indigo); }
+      h3 { margin: 22px 0 6px; color: var(--indigo-deep); }
+      .kid {
+        background: var(--pale); border-left: 4px solid var(--indigo);
+        border-radius: 12px; padding: 12px 16px; margin: 10px 0; color: var(--indigo-deep);
+      }
+      .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-top: 16px; }
+      .card { background: var(--card); border: 1px solid #dfe4fb; border-radius: var(--radius); padding: 20px; box-shadow: 0 6px 20px rgba(47,71,184,0.05); }
+      .card .emoji { font-size: 28px; }
+      .card h4 { margin: 8px 0 4px; }
+      .card p { color: var(--muted); font-size: 0.92rem; margin: 0; }
+      code { background: #e2e8ff; padding: 2px 7px; border-radius: 6px; font-size: 0.9em; color: var(--indigo-deep); }
+      .tiers { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); margin-top: 16px; }
+      .tier { background: var(--card); border: 1px solid #dfe4fb; border-radius: 16px; padding: 14px; text-align: center; }
+      .tier b { color: var(--indigo-deep); }
+      .tier span { color: var(--muted); font-size: 0.85rem; }
+      .callout { background: linear-gradient(135deg, var(--indigo), var(--indigo-deep)); color: #fff; border-radius: var(--radius); padding: 24px; margin: 24px 0; box-shadow: 0 10px 30px rgba(47,71,184,0.3); }
+      .callout h3 { color: #fff; margin-top: 0; }
+      ul { padding-left: 20px; } li { margin: 6px 0; }
+      footer { text-align: center; color: var(--muted); padding: 48px 20px 64px; font-size: 0.9rem; }
+      a { color: var(--indigo-deep); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">🧭</div>
+      <h1>LumiSpire</h1>
+      <p class="tagline">Explore. Learn. Level up.</p>
+      <p class="sub">
+        A world-exploring game where every adventure teaches a real skill — and
+        all your progress stays <strong>encrypted on your own Solid Pod</strong>,
+        so it belongs to you, not a game company.
+      </p>
+    </header>
+
+    <main class="wrap">
+      <div class="kid">
+        <strong>In plain words (for anyone, any age):</strong> It's a game world
+        you explore. Solve puzzles to earn coins and level up, unlock new lands,
+        and dress up your character — while secretly getting smarter. And your
+        game save is locked in a box only you can open. 🔒
+      </div>
+
+      <h2><span class="dot"></span>How you play</h2>
+      <div class="grid">
+        <div class="card"><div class="emoji">🧭</div><h4>Explore worlds</h4><p>Each world teaches a subject: numbers, reading, online safety, coding, feelings, and more.</p></div>
+        <div class="card"><div class="emoji">⭐</div><h4>Clear levels</h4><p>Answer to earn XP and level up. Every question teaches you something — win or lose.</p></div>
+        <div class="card"><div class="emoji">🪙</div><h4>Earn coins</h4><p>Spend them to unlock new worlds and gear for your avatar.</p></div>
+        <div class="card"><div class="emoji">👑</div><h4>Dress up</h4><p>Buy skins, hats, outfits and houses in the Wardrobe.</p></div>
+      </div>
+
+      <h2><span class="dot"></span>Grows with you (ages 2–50)</h2>
+      <p>The same subjects get harder as you grow. Your age picks your tier:</p>
+      <div class="tiers">
+        <div class="tier"><b>Sprout</b><br /><span>ages 2–4</span></div>
+        <div class="tier"><b>Explorer</b><br /><span>ages 5–8</span></div>
+        <div class="tier"><b>Pathfinder</b><br /><span>ages 9–12</span></div>
+        <div class="tier"><b>Voyager</b><br /><span>ages 13–17</span></div>
+        <div class="tier"><b>Pioneer</b><br /><span>ages 18–50</span></div>
+      </div>
+      <p style="margin-top:14px;color:var(--muted)">
+        So Cyber Harbour teaches a 6-year-old "never share your password" and a
+        grown-up how to spot a phishing email — same world, right level.
+      </p>
+
+      <h2><span class="dot"></span>Your data stays yours (Solid)</h2>
+      <h3>1. Reads &amp; writes to your Pod</h3>
+      <p>Your progress is saved to and loaded from your own Solid Pod — there's no LumiSpire server keeping it.</p>
+      <h3>2. Encryption by default</h3>
+      <p>Progress is written with <code>writePod(encrypted: true)</code>, so the Pod stores a scrambled file only your key can open.</p>
+      <h3>3. Consent &amp; sharing you control (WAC/ACP)</h3>
+      <p>Consent is explicit (with a parental-consent switch for kids). You can give a teacher or guardian read-only access with <code>grantPermission</code> and take it back with <code>revokePermission</code> anytime.</p>
+      <h3>4. Data minimisation</h3>
+      <p>Only your game progress is stored. Nothing is sold, ever.</p>
+
+      <div class="callout">
+        <h3>Try everything in one tap</h3>
+        <p>Log in, then open <strong>My Explorer → "Load demo save"</strong> to fill your Pod with coins, progress and cosmetics so every feature is live instantly.</p>
+      </div>
+
+      <h2><span class="dot"></span>For developers</h2>
+      <ul>
+        <li>Flutter/Dart on <a href="https://pub.dev/packages/solidpod" target="_blank" rel="noopener">solidpod</a> + <a href="https://pub.dev/packages/solidui" target="_blank" rel="noopener">solidui</a>.</li>
+        <li>Progress is one encrypted Turtle document (<code>lumispire_progress.ttl</code>) on the player's Pod.</li>
+        <li>Sharing uses Solid WAC/ACP; login is Solid-OIDC (see <code>client-profile.jsonld</code>).</li>
+        <li>Pure progression rules are unit-tested (<code>test/progression_test.dart</code>).</li>
+      </ul>
+    </main>
+
+    <footer>🧭 LumiSpire · Skills for life, saved on your own Solid Pod.</footer>
+  </body>
+</html>
